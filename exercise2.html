@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 1</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+
+<body>
+    <form id="myForm">
+        <!-- Two text fields - Name and Email -->
+        <input id="name" type="text" placeholder="Name" value=""><br><br>
+        <input id="email" type="email" placeholder="Email" value=""><br><br>
+        <!-- Two radio buttons for Gender - Male and Female -->
+        <label>
+            <input type="radio" name="gender" value="male"> Male
+        </label>
+        <label>
+            <input type="radio" name="gender" value="female"> Female
+        </label><br><br>
+        <!-- Submit button -->
+        <button type="button" onclick="displayFormData()">Submit</button>
+    </form>
+
+    <!-- Display form data -->
+    <div id="formDataDisplay"></div>
+
+    <script>
+        // JavaScript to get and display form data
+        function displayFormData() {
+            var name = $("#name").val();
+            var email = $("#email").val();
+            var gender = $("input[name='gender']:checked").val();
+
+            var formDataDisplay = $("#formDataDisplay");
+            formDataDisplay.html("<h2>Form Data:</h2>");
+            formDataDisplay.append("<p><strong>Name:</strong> " + name + "</p>");
+            formDataDisplay.append("<p><strong>Email:</strong> " + email + "</p>");
+            formDataDisplay.append("<p><strong>Gender:</strong> " + gender + "</p>");
+
+            formDataDisplay.css({
+                'font-family': 'Arial',
+                'border': '1px solid black',
+                'background-color': '#f0f0f0'
+            });
+
+            formDataDisplay.mouseover(function () {
+                formDataDisplay.slideUp();
+            });
+
+            formDataDisplay.hide().fadeIn();
+        }
+    </script>
+</body>
+
+</html>

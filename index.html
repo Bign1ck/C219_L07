@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Exercise 2</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<style>
+    body {
+        margin: 0;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    .card {
+        border-color: black;
+        margin-bottom: 10px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .user-circle {
+        font-size: 30px;
+        margin: 10px;
+        color: white;
+    }
+
+    .green-border {
+        color: lime;
+    }
+    .soiLogo {
+        max-height: 40px;
+        margin-right: 10px;
+        border-radius: 5px;
+    }
+</style>
+
+<body>
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="images/soiLogo.png" class="soiLogo">
+                <b>SOI Learning Portal</b>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="mynavbar">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Courses</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">HTML</a></li>
+                            <li><a class="dropdown-item" href="#">CSS</a></li>
+                            <li><a class="dropdown-item" href="#">PHP</a></li>
+                            <li><a class="dropdown-item" href="#">JavaScript</a></li>
+                            <li><a class="dropdown-item" href="#">Python</a></li>
+                            <li><a class="dropdown-item" href="#">Java</a></li>
+                            <li><a class="dropdown-item" href="#">iOS</a></li>
+                            <li><a class="dropdown-item" href="#">React</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" style="margin-right: 10px;">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <form class="d-flex">
+                            <input class="form-control me-2" type="text" placeholder="Search">
+                            <button class="btn btn-light" id="search-btn" type="button">Search</button>
+                        </form>
+                    </li>
+                </ul>
+            </div>
+            <div class="row align-items-center">
+                <div class="col-auto">
+                    <div class="position-relative">
+                        <a href="#" style="color: white; font-size: 30px;" class="notifications" id="notificationsDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class='bx bx-bell'></i>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-center" aria-labelledby="notificationsDropdown">
+                            <!-- Unread messages -->
+                            <li><a class="dropdown-item" href="#">Unread Message 1</a></li>
+                            <li><a class="dropdown-item" href="#">Unread Message 2</a></li>
+                            <!-- Divider between unread and read messages -->
+                            <li class="dropdown-divider"></li>
+                            <!-- Read messages -->
+                            <li><a class="dropdown-item" href="#">Read Message 1</a></li>
+                            <li><a class="dropdown-item" href="#">Read Message 2</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-auto">
+                    <a href="#" class="user-circle"><i class='bx bxs-user-circle'></i></a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- BANNER -->
+    <div class="container-fluid" style="color: black; padding: 20px; height: auto;">
+        <div class="container text-center">
+            <div class="row" style="
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-bottom: 5px;
+                margin-top: 5px;">
+
+                <div class="col-md-6">
+                    <h3 class="display-3">Welcome to SOI Learning Portal</h1>
+                        <p class="h6">Expertly craft courses that best fit your learning needs and preferences</p>
+                        <button type="button" class="btn btn-dark" style="margin: 10px;">Browse Courses</button>
+                        <button type="button" class="btn"
+                            style="margin: 10px; background-color: whitesmoke; border-color: black;">Be an
+                            Instructor</button>
+                </div>
+
+                <div class="col-md-6">
+                    <img src="images/codingGrp.png" alt="imgGrp" class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 2ND Banner-->
+    <div class="container-fluid" style="background-color: whitesmoke; color: black; padding: 5px;">
+        <div class="container">
+            <div class="row justify-content-center align-items-center" style="margin-bottom: 50px; margin-top: 50px;">
+
+                <div class="col-md-3">
+                    <div class="d-flex justify-content-center align-items-start">
+                        <a href="#" class="icon"
+                            style="padding: .8rem; background: white; border-radius: .8rem; color: black;"><i
+                                class='bx bxs-book'></i></a>
+                        <div style="margin-left: 0.5rem;">
+                            <p class="h6"><b>158 online courses</b></p>
+                            <p class="h6">Enjoy a variety of fresh topics</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="d-flex justify-content-center align-items-start">
+                        <a href="#" class="icon"
+                            style="padding: .8rem; background: white; border-radius: .8rem; color: black;"><i
+                                class='bx bxs-user-circle'></i></a>
+                        <div style="margin-left: 0.5rem;">
+                            <p class="h6"><b>Expert instruction</b></p>
+                            <p class="h6">Find the right instructor for you</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="d-flex justify-content-center align-items-start+">
+                        <a href="#" class="icon"
+                            style="padding: .8rem; background: white; border-radius: .8rem; color: black;"><i
+                                class='bx bx-history'></i></a>
+                        <div style="margin-left: 0.5rem;">
+                            <p class="h6"><b>Lifetime access</b></p>
+                            <p class="h6">Learn on your schedule</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    <br></br>
+
+    <!-- CARDS AND CAROUSEL-->
+
+    <p class="h5" style="text-align: center;">Featured Courses</p>
+
+    <div id="demo" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+            <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+        </div>
+
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+
+                <div class="container-fluid p-10">
+                    <div class="container text-center">
+                        <div class="row pt-5">
+                            <div class="col-md-3 sol-sm-6">
+                                <div class="card" style="width:300px; height: 500px;">
+                                    <img class="card-img-top" src="images/appDev.png" alt="Card image"
+                                        style="width:100%">
+                                    <div class="card-body">
+                                        <h4 class="card-title">App Development</h4>
+                                        <p class="card-text">Some example text for the different Programming Courses
+                                            offered</p>
+                                        <div class="card-footer"><a><i class='bx bxs-user-circle'></i></a> Instructor:
+                                            Nicholas
+                                            <a href="#" id="bookmarkButton" data-bs-toggle="offcanvas"
+                                                data-bs-target="#bookmarkOffcanvas" style="color: black;">
+                                                <i class='bx bxs-bookmark' data-bs-toggle="tooltip"
+                                                    title="Add to Bookmarks"></i>
+                                            </a>
+                                        </div>
+
+                                        <!-- Offcanvas container -->
+                                        <div class="offcanvas offcanvas-bottom" tabindex="-1" id="bookmarkOffcanvas"
+                                            aria-labelledby="bookmarkOffcanvasLabel">
+                                            <div class="offcanvas-header">
+                                                <h5 class="offcanvas-title" id="bookmarkOffcanvasLabel">Bookmarks</h5>
+                                                <button type="button" class="btn-close text-reset"
+                                                    data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                                            </div>
+                                            <div class="offcanvas-body">
+                                                <div class="col-md-3 sol-sm-6">
+                                                    <div class="card" style="width:300px; height: 500px;">
+                                                        <img class="card-img-top" src="images/appDev.png"
+                                                            alt="Card image" style="width:100%">
+                                                        <div class="card-body">
+                                                            <h4 class="card-title">App Development</h4>
+                                                            <p class="card-text">Some example text for the different
+                                                                Programming Courses
+                                                                offered</p>
+                                                            <div class="card-footer"><a><i
+                                                                        class='bx bxs-user-circle'></i></a> Instructor:
+                                                                Nicholas <a><i class='bx bxs-bookmark'
+                                                                        data-bs-toggle="tooltip"
+                                                                        title="Add to Bookmarks"></i></a></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-3 sol-sm-6">
+                                <div class="card" style="width:300px; height: 500px;">
+                                    <img class="card-img-top" src="images/webDev.png" alt="Card image"
+                                        style="width:100%">
+                                    <div class="card-body">
+                                        <h4 class="card-title">Web Development</h4>
+                                        <p class="card-text">Some example text for the different Programming Courses
+                                            offered</p>
+                                        <div class="card-footer"><a><i class='bx bxs-user-circle'></i></a> Instructor:
+                                            Ibnu <a><i class='bx bxs-bookmark' data-bs-toggle="tooltip"
+                                                    title="Add to Bookmarks"></i></a></div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="col-md-3 sol-sm-6">
+                                <div class="card" style="width:300px; height: 500px;">
+                                    <img class="card-img-top" src="images/webDesign.png" alt="Card image"
+                                        style="width:100%">
+                                    <div class="card-body">
+                                        <h4 class="card-title">Web Design</h4>
+                                        <p class="card-text">Some example text for the different Programming Courses
+                                            offered</p>
+                                        <div class="card-footer"><a><i class='bx bxs-user-circle'></i></a> Instructor:
+                                            Aloysius
+                                            <a><i class='bx bxs-bookmark' data-bs-toggle="tooltip"
+                                                    title="Add to Bookmarks"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-3 sol-sm-6">
+                                <div class="card" style="width:300px; height: 500px;">
+                                    <img class="card-img-top" src="images/webProg.png" alt="Card image"
+                                        style="width:100%">
+                                    <div class="card-body">
+                                        <h4 class="card-title">Web Programming</h4>
+                                        <p class="card-text">Some example text for the different Programming Courses
+                                            offered</p>
+                                        <div class="card-footer"><a><i class='bx bxs-user-circle'></i></a> Instructor:
+                                            Nogoose <a><i class='bx bxs-bookmark' data-bs-toggle="tooltip"
+                                                    title="Add to Bookmarks"></i></a></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="carousel-item">
+                <div class="container-fluid p-10">
+                    <div class="container text-center">
+                        <div class="row pt-5">
+                            <div class="col-md-3 sol-sm-6">
+                                <div class="card" style="width:300px; height: 500px;">
+                                    <img class="card-img-top" src="images/coding1.jpg" alt="Card image"
+                                        style="width:100%; height:250px;">
+                                    <div class="card-body">
+                                        <h4 class="card-title">Python</h4>
+                                        <p class="card-text">Some example text for the different Programming Courses
+                                            offered</p>
+                                        <div class="card-footer"><a><i class='bx bxs-user-circle'></i></a> Instructor:
+                                            Issac
+                                            <a><i class='bx bxs-bookmark' data-bs-toggle="tooltip"
+                                                    title="Add to Bookmarks"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-3 sol-sm-6">
+                                <div class="card" style="width:300px; height: 500px;">
+                                    <img class="card-img-top" src="images/coding2.jpg" alt="Card image"
+                                        style="width:100%; height:250px;">
+                                    <div class="card-body">
+                                        <h4 class="card-title">JavaScript</h4>
+                                        <p class="card-text">Some example text for the different Programming Courses
+                                            offered</p>
+                                        <div class="card-footer"><a><i class='bx bxs-user-circle'></i></a> Instructor:
+                                            Jaymi
+                                            <a><i class='bx bxs-bookmark' data-bs-toggle="tooltip"
+                                                    title="Add to Bookmarks"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-3 sol-sm-6">
+                                <div class="card" style="width:300px; height: 500px;">
+                                    <img class="card-img-top" src="images/coding3.jpg" alt="Card image"
+                                        style="width:100%; height:250px;">
+                                    <div class="card-body">
+                                        <h4 class="card-title">HTML</h4>
+                                        <p class="card-text">Some example text for the different Progamming Courses
+                                            offered</p>
+                                        <div class="card-footer"><a><i class='bx bxs-user-circle'></i></a> Instructor:
+                                            Chaewon
+                                            <a><i class='bx bxs-bookmark' data-bs-toggle="tooltip"
+                                                    title="Add to Bookmarks"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-3 sol-sm-6">
+                                <div class="card" style="width:300px; height: 500px;">
+                                    <img class="card-img-top" src="images/coding4.jpg" alt="Card image"
+                                        style="width:100%; height:250px;">
+                                    <div class="card-body">
+                                        <h4 class="card-title">React</h4>
+                                        <p class="card-text">Some example text for the different Progamming Courses
+                                            offered</p>
+                                        <div class="card-footer"><a><i class='bx bxs-user-circle'></i></a> Instructor:
+                                            Karina
+                                            <a><i class='bx bxs-bookmark' data-bs-toggle="tooltip"
+                                                    title="Add to Bookmarks"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </button>
+        </div>
+    </div>
+
+    <!-- Offcanvas for Bookmarked Cards -->
+    <div class="offcanvas offcanvas-bottom" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasExampleLabel">Bookmarked Cards</h5>
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body" id="offcanvasBody">
+            <!-- Bookmarked cards will be dynamically added here -->
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="container">
+        <footer class="py-3 my-4">
+            <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Privacy</a></li>
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Terms</a></li>
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Feedback</a></li>
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Support</a></li>
+            </ul>
+            <p class="text-center text-body-secondary">&copy; 2023 SOI, Inc</p>
+        </footer>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            // Initialise tooltips for Bookmmarks
+            $('[data-bs-toggle="tooltip"]').tooltip();
+
+            // "Online" for Profile
+            $(".user-circle").on("click", function () {
+                $(this).toggleClass("green-border");
+            });
+
+            var tags = ["HTML", "CSS", "PHP", "Javascript", "Python", "Java", "IOS", "React"];
+
+            $(".cars").autocomplete({
+                source: tags
+            });
+        });
+    </script>
+
+</body>
+
+</html>
